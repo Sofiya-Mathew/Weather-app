@@ -1,0 +1,56 @@
+<div class="grid-container">
+  <!-- Tab group for countries -->
+  <mat-tab-group (selectedIndexChange)="onCityChange($event)">
+    <mat-tab *ngFor="let city of cities" [label]="city"></mat-tab>
+  </mat-tab-group>
+
+  <!-- Grid list for mini cards -->
+  <mat-grid-list cols="6" rowHeight="200px">
+    <!-- First row: Mini Cards -->
+    <ng-container *ngFor="let prop of props1 let i = index">
+      <mat-grid-tile [colspan]="selectedCardIndex === i ? 2 : 1" [rowspan]="selectedCardIndex === i ? 2 : 1">
+        <mat-card class="dashboard-card" [class.selected]="selectedCardIndex === i" (click)="selectCard(i)">
+          <mat-card-header>
+            <mat-card-title class="title">
+              {{ prop.label }}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content mat-display-2">
+            {{ cardData[prop.key] || 'N/A' }} <!-- Use 'N/A' if property is undefined -->
+          </mat-card-content>
+        </mat-card> </mat-grid-tile>
+    </ng-container>
+    <!-- Extra Column spanning two rows and two columns in width -->
+    <mat-grid-tile [colspan]="3" [rowspan]="2">
+      <!--card.component.html-->
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="container mx-auto px-4">
+            <canvas #barChart class="chart-base" chart-type="type" chart-data="data" chart-labels="labels"
+              chart-legend="true">
+            </canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Second row: Mini Cards -->
+    <ng-container *ngFor="let prop of props2 let i = index">
+      <mat-grid-tile [colspan]="selectedCardIndex === i ? 2 : 1" [rowspan]="selectedCardIndex === i ? 2 : 1">
+        <mat-card class="dashboard-card" [class.selected]="selectedCardIndex === i" (click)="selectCard(i)">
+          <mat-card-header>
+            <mat-card-title class="title">
+              {{ prop.label }}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content mat-display-2">
+            {{ cardData[prop.key] || 'N/A' }} <!-- Use 'N/A' if property is undefined -->
+          </mat-card-content>
+        </mat-card> </mat-grid-tile>
+    </ng-container>
+  </mat-grid-list>
+</div>

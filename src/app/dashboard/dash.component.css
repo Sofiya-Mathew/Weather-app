@@ -1,0 +1,61 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card {
+  width: 100%;
+}
+
+.tab{
+  padding: 0 !important;
+  margin: 0;
+}
+::ng-deep .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs > .mat-mdc-tab-header .mat-mdc-tab {
+  flex-grow: 0 !important;  /* Override flex-grow to prevent stretching */
+  padding: 0 12px !important; /* Adjust padding to control space around tabs */
+}
+
+::ng-deep .mat-drawer-inner-container{
+  background-color:rgba(114, 6, 142, 0.8) !important;
+  color: white !important;
+}
+::ng-deep   .mat-toolbar-single-row {
+  background-color:rgba(114, 6, 142, 0.8) !important;
+  color: white;
+}
+
+::ng-deep .mdc-list-item__primary-text{
+  color: white !important;
+}
+
+.dashboard-card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.mat-display-2 {
+  font-size: 1.5em; /* Adjust this value to make the font size larger or smaller */
+  color: rgba(114, 6, 142, 0.8) ;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 1em; /* Adjust this value for smaller title size */
+}
