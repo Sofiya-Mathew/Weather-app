@@ -31,17 +31,15 @@ export class DashComponent implements OnInit {
   //setting cities defaultly
   cities = ['New York', 'London', 'Tokyo', 'Sydney'];
   //To show details in card
-  props1 = [
+  props = [
     { label: 'Temperature', key: 'temperature' },
     { label: 'Humidity', key: 'humidity' },
-    { label: 'Wind Speed', key: 'windSpeed' }
-  ];
-
-  props2 = [
+    { label: 'Wind Speed', key: 'windSpeed' },
     { key: 'Precipitation', label: 'Precipitation' },
     { key: 'Pressure', label: 'Pressure' },
     { key: 'Condition', label: 'Condition' }
   ];
+
 
   constructor(private weatherService: WeatherService) {
     // Initialize chartLabels and chartData as empty arrays
